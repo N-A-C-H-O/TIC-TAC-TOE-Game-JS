@@ -95,3 +95,27 @@
 #reset:hover {
     background-color: #485b5e;
 }
+
+footer {
+    background-color: #ada9a0;
+}
+
+#copyright {
+    text-align: center;
+    padding: 1em 0;
+    font-size: 1.5em;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.social-list li {
+    margin: 1em;
+}
+
+.social-list li a {
+    font-size: 1.6em;
+}

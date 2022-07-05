@@ -2,7 +2,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
     const btnReset = document.getElementById('reset');
-    const announcer = document.querySelector('.announcer');
 
     let board = ['','','','','','','','',''];
     let currentPlayer = 'X';
@@ -29,6 +28,43 @@ window.addEventListener('DOMContentLoaded', () => {
         [2, 4, 6]
     ];
 
+    const announce = (type) => {
+        switch(type) {
+            case playerOWon:
+                Swal.fire({
+                    title: 'Player O wins! 🥳',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+                break;
+            case playerXWon:
+                Swal.fire({
+                    title: 'Player X wins! 🥳',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+                break;
+            case tie:
+                Swal.fire({
+                    title: 'Tie! 🤜🤛',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+        }
+    } 
+
     const handleResultValidation = () => {
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
@@ -53,21 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!board.includes('')) {
             announce(tie);
         }
-    }
-
-    const announce = (type) => {
-        switch(type) {
-            case playerOWon:
-                announcer.innerHTML = 'Player O Wins';
-                break;
-            case playerXWon:
-                announcer.innerHTML = 'Player X Wins';
-                break;
-            case tie:
-                announcer.innerHTML = 'Tie';
-        }
-        announcer.classList.remove('hide');
-    }   
+    }  
 
     const isValidAction = (tile) => {
         if (tile.innerHTML === 'X' || tile.innerHTML === 'O') {
@@ -106,7 +128,6 @@ window.addEventListener('DOMContentLoaded', () => {
     btnReset.addEventListener('click', () => {
         board = ['','','','','','','','',''];
         isGameActive = true;
-        announcer.classList.add('hide');
         
         if (currentPlayer === 'O') {
             changePlayer()

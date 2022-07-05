@@ -18,14 +18,13 @@
 }
 
 .container-game {
-    background-color: #7d9d9c;
+    background-color: #7d9d9cd9;
     padding: 5em;
     border-radius: 12px;
     box-shadow: 0 2px 20px black;
 }
 
 .title {
-    color: white;
     text-align: center;
     margin-bottom: 3em;
     font-size: 1.5em;
@@ -33,7 +32,6 @@
 
 .display {
     text-align: center;
-    color: white;
     margin-bottom: 2.6em;
 }
 
@@ -61,7 +59,7 @@
     min-width: 100px;
     min-height: 100px;
     cursor: pointer;
-    background-color: #F0EBE3;
+    background-color: #dcd5cb;
 }
 
 .controls {
@@ -71,13 +69,13 @@
 }
 
 .playerX {
-    color: blue;
+    color: #334041;
     font-size: 1.8em;
     font-weight: bold;
 }
 
 .playerO {
-    color: red;
+    color: #ad996e;
     font-size: 1.8em;
     font-weight: bold;
 }
